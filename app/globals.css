@@ -225,54 +225,58 @@ body {
   overflow-x: hidden;
 }
 
-/* Starry Element 1: Tiny 4-pointed golden sparkle stars */
+/* Starry Element 1: Distinct 4-pointed golden sparkle stars */
 body::before {
-  content: "✦       ✦ \A   ✦           ✦"; 
+  content: "✦      ✦ \A   ✦           ✦"; 
   white-space: pre-wrap;
   position: fixed;
   left: 10%;
   right: 10%;
-  bottom: -20px;
-  font-size: 14px;
-  color: oklch(0.7 0.1 78 / 40%); /* Soft gold accent matching your theme */
+  bottom: -50px;
+  font-size: 18px; /* Slightly larger to be visible */
+  color: #c5a85c; /* A solid, rich gold that won't blend into the cream background */
+  text-shadow: 
+    0 0 8px rgba(197, 168, 92, 0.3), /* Gives the star a gentle glowing look */
+    40vw -30vh #c5a85c, 
+    15vw -60vh #c5a85c;
   pointer-events: none;
-  z-index: 0;
-  text-shadow: 40vw -30vh oklch(0.7 0.1 78 / 30%), 15vw -60vh oklch(0.7 0.1 78 / 20%);
-  animation: floatingObjects 16s linear infinite;
+  z-index: 10; /* Brought to the front layer so it floats over the background safely */
+  animation: floatingObjects 14s linear infinite;
 }
 
-/* Starry Element 2: Soft micro-dots floating at a different pace */
+/* Starry Element 2: Deep gold micro-dots floating at a different pace */
 body::after {
   content: "•         • \A     •         •";
   white-space: pre-wrap;
   position: fixed;
   left: 20%;
   right: 20%;
-  bottom: -40px;
-  font-size: 10px;
-  color: oklch(0.58 0.1 72 / 30%);
+  bottom: -70px;
+  font-size: 12px;
+  color: #a3843b; /* A slightly deeper bronze-gold for contrast */
+  text-shadow: 
+    25vw -20vh #a3843b, 
+    50vw -50vh #a3843b;
   pointer-events: none;
-  z-index: 0;
-  text-shadow: 25vw -20vh oklch(0.58 0.1 72 / 20%), 50vw -50vh oklch(0.58 0.1 72 / 30%);
-  animation: floatingObjects 22s linear infinite;
-  animation-delay: 4s;
+  z-index: 10;
+  animation: floatingObjects 20s linear infinite;
+  animation-delay: 3s;
 }
 
 /* Elegant upward floating animation with fade out */
 @keyframes floatingObjects {
   0% {
-    transform: translateY(0) scale(0.8);
+    transform: translateY(0) scale(0.7);
     opacity: 0;
   }
-  15% {
-    opacity: 1;
+  10% {
+    opacity: 1; /* Quickly fades in at the bottom */
   }
-  85% {
-    opacity: 1;
+  90% {
+    opacity: 1; /* Stays fully visible while moving up */
   }
   100% {
-    transform: translateY(-110vh) scale(1.1);
-    opacity: 0;
+    transform: translateY(-120vh) scale(1.1);
+    opacity: 0; /* Smoothly fades out as it clears the top of the screen */
   }
 }
- 
