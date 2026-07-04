@@ -47,7 +47,7 @@ export function ClosingSection() {
             Rashid <span className="text-gold">&amp;</span> Alia
           </p>
           <p className="mt-1 font-sans text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
-            6 &middot; 08 &middot; 2026
+            06 &middot; 08 &middot; 2026
           </p>
         </Reveal>
       </div>
