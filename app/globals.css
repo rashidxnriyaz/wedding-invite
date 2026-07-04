@@ -225,58 +225,47 @@ body {
   overflow-x: hidden;
 }
 
-/* Starry Element 1: Distinct 4-pointed golden sparkle stars */
+/* Layer 1: Delicate Gold Stars */
 body::before {
-  content: "✦      ✦ \A   ✦           ✦"; 
-  white-space: pre-wrap;
+  content: "✦";
   position: fixed;
-  left: 10%;
-  right: 10%;
-  bottom: -50px;
-  font-size: 18px; /* Slightly larger to be visible */
-  color: #c5a85c; /* A solid, rich gold that won't blend into the cream background */
-  text-shadow: 
-    0 0 8px rgba(197, 168, 92, 0.3), /* Gives the star a gentle glowing look */
-    40vw -30vh #c5a85c, 
-    15vw -60vh #c5a85c;
-  pointer-events: none;
-  z-index: 10; /* Brought to the front layer so it floats over the background safely */
-  animation: floatingObjects 14s linear infinite;
-}
-
-/* Starry Element 2: Deep gold micro-dots floating at a different pace */
-body::after {
-  content: "•         • \A     •         •";
-  white-space: pre-wrap;
-  position: fixed;
-  left: 20%;
-  right: 20%;
-  bottom: -70px;
-  font-size: 12px;
-  color: #a3843b; /* A slightly deeper bronze-gold for contrast */
-  text-shadow: 
-    25vw -20vh #a3843b, 
-    50vw -50vh #a3843b;
+  font-size: 20px;
+  color: #d4af37; /* Sophisticated metallic gold */
   pointer-events: none;
   z-index: 10;
-  animation: floatingObjects 20s linear infinite;
-  animation-delay: 3s;
+  animation: elegantDrift 20s linear infinite;
+  /* Create multiple stars using shadows for a sophisticated, distributed look */
+  text-shadow: 
+    15vw 10vh 2px rgba(212, 175, 55, 0.4), 
+    40vw 40vh 3px rgba(212, 175, 55, 0.3), 
+    75vw 20vh 2px rgba(212, 175, 55, 0.5);
+  opacity: 0.6;
 }
 
-/* Elegant upward floating animation with fade out */
-@keyframes floatingObjects {
+/* Layer 2: Smaller, Subtle Star Mists */
+body::after {
+  content: "✧";
+  position: fixed;
+  font-size: 14px;
+  color: #e5c160;
+  pointer-events: none;
+  z-index: 10;
+  animation: elegantDrift 30s linear infinite reverse; /* Moves differently for depth */
+  text-shadow: 
+    30vw 60vh 1px rgba(229, 193, 96, 0.3), 
+    60vw 10vh 2px rgba(229, 193, 96, 0.2);
+  opacity: 0.4;
+}
+
+/* Sophisticated, slow-paced floating animation */
+@keyframes elegantDrift {
   0% {
-    transform: translateY(0) scale(0.7);
-    opacity: 0;
+    transform: translateY(100vh) translateX(0);
   }
-  10% {
-    opacity: 1; /* Quickly fades in at the bottom */
-  }
-  90% {
-    opacity: 1; /* Stays fully visible while moving up */
+  50% {
+    transform: translateY(50vh) translateX(20px); /* Adds a subtle side-to-side sway */
   }
   100% {
-    transform: translateY(-120vh) scale(1.1);
-    opacity: 0; /* Smoothly fades out as it clears the top of the screen */
+    transform: translateY(-20vh) translateX(-20px);
   }
 }
