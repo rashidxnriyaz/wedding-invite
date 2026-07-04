@@ -7,7 +7,7 @@
 @theme inline {
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
-  --font-arabic: var(--font-amiri), serif;
+  --font-arabic: var(--font-Noto Naskh Arabic), serif;
   --font-script: var(--font-script), cursive;
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
