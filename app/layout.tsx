@@ -67,9 +67,7 @@ export default function RootLayout({
       className={`light ${cormorant.variable} ${jost.variable} ${amiri.variable} ${tangerine.variable} bg-background`}
     >
       <body className="font-sans antialiased">
-  <div className="islamic-geometry-wrapper">
-    {children}
-  </div>
+  {children}
   {process.env.NODE_ENV === 'production' && <Analytics />}
     </html>
   )
