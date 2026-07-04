@@ -219,53 +219,71 @@
     animation: float-slow 5s ease-in-out infinite;
   }
 }
-/* Container for the floating starry sparkles */
+/* Container for the rich floating starry sky */
 body {
   position: relative;
   overflow-x: hidden;
 }
 
-/* Layer 1: Delicate Gold Stars */
+/* Layer 1: A dense layer of medium golden stars */
 body::before {
   content: "✦";
   position: fixed;
-  font-size: 20px;
-  color: #d4af37; /* Sophisticated metallic gold */
+  font-size: 16px;
+  color: #d4af37; /* Premium metallic gold */
   pointer-events: none;
   z-index: 10;
-  animation: elegantDrift 20s linear infinite;
-  /* Create multiple stars using shadows for a sophisticated, distributed look */
+  animation: elegantDrift 22s linear infinite;
+  /* Multiplied shadows to fill the screen with stars at various positions */
   text-shadow: 
-    15vw 10vh 2px rgba(212, 175, 55, 0.4), 
-    40vw 40vh 3px rgba(212, 175, 55, 0.3), 
-    75vw 20vh 2px rgba(212, 175, 55, 0.5);
-  opacity: 0.6;
+    10vw 20vh 1px rgba(212, 175, 55, 0.5), 
+    25vw 50vh 2px rgba(212, 175, 55, 0.4), 
+    40vw 15vh 1px rgba(212, 175, 55, 0.6), 
+    55vw 75vh 3px rgba(212, 175, 55, 0.3), 
+    70vw 35vh 1px rgba(212, 175, 55, 0.5), 
+    85vw 60vh 2px rgba(212, 175, 55, 0.4),
+    95vw 10vh 1px rgba(212, 175, 55, 0.5),
+    20vw 80vh 2px rgba(212, 175, 55, 0.4),
+    50vw 90vh 1px rgba(212, 175, 55, 0.6),
+    80vw 20vh 2px rgba(212, 175, 55, 0.3);
 }
 
-/* Layer 2: Smaller, Subtle Star Mists */
+/* Layer 2: A dense layer of tiny, deeper golden stars moving at a different pace */
 body::after {
   content: "✧";
   position: fixed;
-  font-size: 14px;
+  font-size: 12px;
   color: #e5c160;
   pointer-events: none;
   z-index: 10;
-  animation: elegantDrift 30s linear infinite reverse; /* Moves differently for depth */
+  animation: elegantDrift 32s linear infinite reverse; /* Opposing motion for rich depth */
   text-shadow: 
-    30vw 60vh 1px rgba(229, 193, 96, 0.3), 
-    60vw 10vh 2px rgba(229, 193, 96, 0.2);
-  opacity: 0.4;
+    5vw 40vh 1px rgba(229, 193, 96, 0.4), 
+    18vw 15vh 0px rgba(229, 193, 96, 0.5), 
+    35vw 70vh 2px rgba(229, 193, 96, 0.3), 
+    48vw 30vh 1px rgba(229, 193, 96, 0.4), 
+    65vw 85vh 1px rgba(229, 193, 96, 0.5), 
+    78vw 45vh 2px rgba(229, 193, 96, 0.3),
+    90vw 75vh 1px rgba(229, 193, 96, 0.4),
+    12vw 85vh 2px rgba(229, 193, 96, 0.3),
+    60vw 55vh 1px rgba(229, 193, 96, 0.5),
+    88vw 5vh 0px rgba(229, 193, 96, 0.4);
 }
 
-/* Sophisticated, slow-paced floating animation */
+/* Sophisticated, slow-paced floating animation with a gentle side sway */
 @keyframes elegantDrift {
   0% {
-    transform: translateY(100vh) translateX(0);
+    transform: translateY(110vh) translateX(0);
+    opacity: 0;
   }
-  50% {
-    transform: translateY(50vh) translateX(20px); /* Adds a subtle side-to-side sway */
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
   }
   100% {
-    transform: translateY(-20vh) translateX(-20px);
+    transform: translateY(-20vh) translateX(15px);
+    opacity: 0;
   }
 }
