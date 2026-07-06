@@ -29,7 +29,7 @@ export default function Page() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        /* Color Coordinates */
+        /* Beautiful Muted Dark-Ivory Shading */
         forceAnimate: true,
         colorMode: "lerpGradient",
         backgroundColor: 0xf5f2eb,
@@ -38,9 +38,8 @@ export default function Page() {
         birdSize: 0.36,
         wingSpan: 16.00,
         quantity: 5.00,            
-        /* Fixed Refresh-Rate Engine Override */
-        frameLimit: 60,            // Locks high-refresh 120Hz screens down to a standard speed pace
-        speedLimit: 1.00,          // Reset to 1.00 so the calculation stays stable under the lock
+        /* Deep WebGL Clock Engine Slowdown */
+        speed: 0.15,               // Directly throttles delta frame rendering on high refresh rates
         separation: 50.00,         
         cohesion: 15.00,           
         alignment: 10.00           
