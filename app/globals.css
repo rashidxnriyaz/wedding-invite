@@ -1,38 +1,27 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
+@import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
+@theme {
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-arabic: var(--font-amiri), serif;
   --font-script: var(--font-script), cursive;
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-border: var(--border);
+  
+  --color-gold: #ad8b3a;
+  --color-gold-soft: #c8af7e;
+  --color-ivory: #f5f2eb;
 }
 
-:root {
-  color-scheme: light;
-  --background: oklch(0.97 0.015 90); /* #f5f2eb backdrop */
-  --foreground: oklch(0.32 0.02 60);
-  --border: oklch(0.62 0.11 75 / 30%);
-  --gold: oklch(0.58 0.11 72);
-  --gold-soft: oklch(0.7 0.1 78);
-}
-
+/* Base DOM mappings */
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    background-color: #f5f2eb;
+    color: oklch(0.32 0.02 60);
     position: relative;
+    margin: 0;
+    padding: 0;
   }
   
-  /* Static, high-end stationery textured overlay */
+  /* Static wedding stationery overlay grid */
   body::before {
     content: "";
     position: fixed;
@@ -41,26 +30,29 @@
     z-index: 0;
     opacity: 0.22; 
     background-image: 
-      linear-gradient(30deg, #ad8b3a 0.75px, transparent 0.75px),
-      linear-gradient(150deg, #ad8b3a 0.75px, transparent 0.75px);
+      linear-gradient(30deg, var(--color-gold) 0.75px, transparent 0.75px),
+      linear-gradient(150deg, var(--color-gold) 0.75px, transparent 0.75px);
     background-size: 56px 97px;
     background-position: center;
   }
 }
 
+/* Core helper tokens */
 @layer utilities {
   .text-gold {
-    color: var(--gold);
+    color: var(--color-gold);
   }
+  
   .animate-fade-up {
     opacity: 0;
     transform: translateY(24px);
     animation: fadeUp 1s ease forwards;
   }
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
