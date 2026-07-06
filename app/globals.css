@@ -216,18 +216,7 @@
     }
   }
   .animate-float {
-    animation: float-slow 5s ease-in-out infinite;
-  }
-}
-/* Deep, mature editorial dark palette */
-body {
-  position: relative;
-  background-color: #0c0f12; /* Rich, matte charcoal black */
-  overflow-x: hidden;
-  color: #f3f4f6;
-}
-
-/* The Evident, Crisp Geometric Layer (No animations, no glow) */
+    /* The Evident Geometric Layer - Uses your original background color */
 body::before {
   content: "";
   position: fixed;
@@ -235,32 +224,20 @@ body::before {
   pointer-events: none;
   z-index: 0;
   
-  /* Micro-fine, razor-sharp geometric linear pattern */
-  opacity: 0.25; /* Clean and perfectly visible */
+  /* Micro-fine, crisp geometric linear pattern */
+  opacity: 0.35; /* Crisp and perfectly visible */
   background-image: 
     linear-gradient(30deg, #c5a85c 0.5px, transparent 0.5px),
     linear-gradient(150deg, #c5a85c 0.5px, transparent 0.5px),
     linear-gradient(270deg, #c5a85c 0.5px, transparent 0.5px);
-  background-size: 56px 97px; /* Creates a sharp, authentic Islamic isometric lattice */
+  background-size: 56px 97px; /* Sharp Islamic isometric lattice */
   background-position: center;
+  
+  /* The Secret: It blends perfectly into your original template colors */
+  mix-blend-mode: overlay; 
 }
 
-/* Elegant, razor-thin perimeter frame */
-body::after {
-  content: "";
-  position: fixed;
-  top: 24px;
-  bottom: 24px;
-  left: 24px;
-  right: 24px;
-  border: 1px solid rgba(197, 168, 92, 0.3); /* Discrete gold border */
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Restores your main content blocks cleanly over the background */
-main, section {
-  position: relative;
-  z-index: 2;
-  background: transparent !important; /* No heavy glass blobs, let the template style itself */
+/* Clear out any background overrides so your original colors stay exactly as they were */
+body, main, section {
+  background: initial;
 }
