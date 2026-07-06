@@ -219,69 +219,68 @@
     animation: float-slow 5s ease-in-out infinite;
   }
 }
-/* Container for the immediate starry sky */
+/* Clean, minimalist architectural backdrop */
 body {
   position: relative;
   overflow-x: hidden;
+  background-color: oklch(0.97 0.015 90); /* Your ivory cream */
 }
 
-/* Layer 1: Medium gold stars distributed across the screen instantly */
+/* The Unexpected Twist: Subtle drafting grid lines that fade into view */
 body::before {
-  content: "✦";
+  content: "";
   position: fixed;
-  font-size: 16px;
-  color: #d4af37; /* Premium metallic gold */
+  inset: 0;
   pointer-events: none;
-  z-index: 10;
-  animation: elegantGlimmer 6s ease-in-out infinite alternate;
-  /* Placed at various heights (vh) so the screen is filled immediately */
-  text-shadow: 
-    10vw 10vh 1px rgba(212, 175, 55, 0.6), 
-    25vw 45vh 2px rgba(212, 175, 55, 0.4), 
-    40vw 25vh 1px rgba(212, 175, 55, 0.6), 
-    55vw 75vh 3px rgba(212, 175, 55, 0.4), 
-    70vw 35vh 1px rgba(212, 175, 55, 0.6), 
-    85vw 60vh 2px rgba(212, 175, 55, 0.4),
-    95vw 15vh 1px rgba(212, 175, 55, 0.5),
-    20vw 80vh 2px rgba(212, 175, 55, 0.4),
-    50vw 90vh 1px rgba(212, 175, 55, 0.6),
-    80vw 20vh 2px rgba(212, 175, 55, 0.4);
+  z-index: 0;
+  opacity: 0.15; /* Extremely subtle, striking only when noticed */
+  
+  /* Creates a fine architectural blueprint graph grid */
+  background-image: 
+    linear-gradient(to right, #c5a85c 1px, transparent 1px),
+    linear-gradient(to bottom, #c5a85c 1px, transparent 1px);
+  background-size: 40px 40px; /* Precise modular grid spacing */
+  
+  animation: structuralAwakening 4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* Layer 2: Tiny stars filling the remaining gaps instantly */
+/* Layer 2: Clean, floating framing lines that act as a geometric canvas */
 body::after {
-  content: "✧";
+  content: "";
   position: fixed;
-  font-size: 12px;
-  color: #e5c160;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  border: 1px solid rgba(197, 168, 92, 0.2);
   pointer-events: none;
-  z-index: 10;
-  animation: elegantGlimmer 8s ease-in-out infinite alternate-reverse;
-  text-shadow: 
-    5vw 35vh 1px rgba(229, 193, 96, 0.4), 
-    18vw 15vh 0px rgba(229, 193, 96, 0.5), 
-    35vw 65vh 2px rgba(229, 193, 96, 0.4), 
-    48vw 45vh 1px rgba(229, 193, 96, 0.5), 
-    65vw 85vh 1px rgba(229, 193, 96, 0.4), 
-    78vw 25vh 2px rgba(229, 193, 96, 0.4),
-    90vw 70vh 1px rgba(229, 193, 96, 0.5),
-    12vw 85vh 2px rgba(229, 193, 96, 0.4),
-    60vw 55vh 1px rgba(229, 193, 96, 0.5),
-    88vw 90vh 0px rgba(229, 193, 96, 0.4);
+  z-index: 1;
+  /* An unexpected asymmetric shift */
+  transform: scale(0.98);
+  animation: frameBreathe 8s ease-in-out infinite alternate;
 }
 
-/* An animation that drifts tiny amounts and sparkles instantly upon load */
-@keyframes elegantGlimmer {
+/* Elegant, unexpected structural reveals on load */
+@keyframes structuralAwakening {
   0% {
-    transform: translateY(0) scale(0.85);
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.9;
-    transform: translateY(-10px) translateX(5px) scale(1);
+    opacity: 0;
+    background-size: 10px 10px; /* Grid starts tight and expands outwards */
   }
   100% {
-    transform: translateY(-20px) translateX(-5px) scale(0.85);
-    opacity: 0.2;
+    opacity: 0.18;
+    background-size: 50px 50px; /* Settles into a spacious layout */
+  }
+}
+
+@keyframes frameBreathe {
+  0% {
+    transform: scale(0.97) rotate(0deg);
+    border-color: rgba(197, 168, 92, 0.1);
+  }
+  50% {
+    border-color: rgba(197, 168, 92, 0.3); /* Subtle shifting illumination */
+  }
+  100% {
+    transform: scale(0.99) rotate(0.5deg); /* A tiny, elegant offset perspective */
   }
 }
