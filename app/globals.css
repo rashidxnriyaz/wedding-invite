@@ -214,30 +214,21 @@
     50% {
       transform: translateY(-8px);
     }
-  }
-  .animate-float {
-    /* The Evident Geometric Layer - Uses your original background color */
+ .animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  
-  /* Micro-fine, crisp geometric linear pattern */
-  opacity: 0.35; /* Crisp and perfectly visible */
+  opacity: 0.35; 
   background-image: 
     linear-gradient(30deg, #c5a85c 0.5px, transparent 0.5px),
     linear-gradient(150deg, #c5a85c 0.5px, transparent 0.5px),
     linear-gradient(270deg, #c5a85c 0.5px, transparent 0.5px);
-  background-size: 56px 97px; /* Sharp Islamic isometric lattice */
+  background-size: 56px 97px; 
   background-position: center;
-  
-  /* The Secret: It blends perfectly into your original template colors */
-  mix-blend-mode: overlay; 
-}
-
-/* Clear out any background overrides so your original colors stay exactly as they were */
-body, main, section {
-  background: initial;
 }
