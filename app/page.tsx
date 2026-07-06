@@ -29,15 +29,15 @@ export default function Page() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        /* Subtle, Softened Color & Motion Settings */
-        backgroundColor: 0xf5f2eb, // Cozy ivory backdrop
-        color1: 0xd0bf9d,          // Very soft, muted champagne gold
-        color2: 0xe2d9c5,          // Delicate accent gold that melts into the ivory
-        birdSize: 0.60,            // Small, delicate birds
+        /* Ultra-subtle micro adjustments */
+        backgroundColor: 0xf5f2eb, // Your main cozy ivory
+        color1: 0xdedacf,          // Soft shade darker than background (no more white)
+        color2: 0xe3dfd5,          // Complementary deep-ivory accent
+        birdSize: 0.12,            // 5x smaller for tiny, elegant silhouettes
         quantity: 4.00,            
-        wingSpan: 18.00,           
-        speedLimit: 0.75,          // Cut by half for an ultra-slow, peaceful flight
-        separation: 30.00,         // Slightly more space between them
+        wingSpan: 12.00,           // Proportional wing adjustment for tiny birds
+        speedLimit: 1.75,          // Maintaining the ultra-slow speed
+        separation: 40.00,         // Spaced wider apart so it feels minimal
         alignment: 20.00,
         cohesion: 20.00
       });
