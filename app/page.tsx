@@ -5,13 +5,14 @@ import { CountdownSection } from '@/components/countdown-section'
 import { ClosingSection } from '@/components/closing-section'
 
 export default function Page() {
-  return (
-    <main className="relative bg-background">
+return (
+    <main className="w-full min-h-screen px-4 md:px-12 lg:px-20 flex flex-col items-stretch gap-0">
       <WeddingHero />
       <QuranicVerse />
       <EventDetails />
       <CountdownSection />
       <ClosingSection />
     </main>
+  )
   )
 }
