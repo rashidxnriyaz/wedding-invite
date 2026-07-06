@@ -219,77 +219,48 @@
     animation: float-slow 5s ease-in-out infinite;
   }
 }
-/* Premium Contrast Background Canvas */
+/* Deep, mature editorial dark palette */
 body {
   position: relative;
-  background-color: #0b132b; /* Deep, rich premium midnight navy for maximum contrast */
+  background-color: #0c0f12; /* Rich, matte charcoal black */
   overflow-x: hidden;
+  color: #f3f4f6;
 }
 
-/* The Evident Islamic Geometric Canvas */
+/* The Evident, Crisp Geometric Layer (No animations, no glow) */
 body::before {
   content: "";
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 90vw;
-  height: 90vw;
-  max-width: 800px;
-  max-height: 800px;
-  transform: translate(-translate(-50%, -50%));
+  inset: 0;
   pointer-events: none;
   z-index: 0;
   
-  /* High-visibility, crisp gold geometric arabesque lines */
-  opacity: 0.35; /* Bumped up significantly so it is clearly visible */
+  /* Micro-fine, razor-sharp geometric linear pattern */
+  opacity: 0.25; /* Clean and perfectly visible */
   background-image: 
-    radial-gradient(circle, transparent 30%, #d4af37 31%, #d4af37 32%, transparent 33%),
-    linear-gradient(45deg, transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%),
-    linear-gradient(-45deg, transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%),
-    linear-gradient(90deg, transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%),
-    linear-gradient(0deg, transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%);
-  background-size: 120px 120px;
+    linear-gradient(30deg, #c5a85c 0.5px, transparent 0.5px),
+    linear-gradient(150deg, #c5a85c 0.5px, transparent 0.5px),
+    linear-gradient(270deg, #c5a85c 0.5px, transparent 0.5px);
+  background-size: 56px 97px; /* Creates a sharp, authentic Islamic isometric lattice */
   background-position: center;
-  
-  /* Beautiful, slow celestial pulse and rotation */
-  animation: geometricGlow 25s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4)); /* Gives the geometry a physical light source */
 }
 
-/* Elegant framing lines to lock the page sections together */
+/* Elegant, razor-thin perimeter frame */
 body::after {
   content: "";
   position: fixed;
-  inset: 20px;
-  border: 2px solid rgba(214, 175, 55, 0.25);
+  top: 24px;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  border: 1px solid rgba(197, 168, 92, 0.3); /* Discrete gold border */
   pointer-events: none;
   z-index: 1;
 }
 
-/* The Glow and Motion Effect that stands out */
-@keyframes geometricGlow {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(0.95);
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.45; /* Gently breathes brighter so guests catch the pattern shifts */
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(15deg) scale(1.05);
-    opacity: 0.35;
-  }
-}
-
-/* Ensures your existing content cards pop sharply over the new vivid background */
-section, main > div {
+/* Restores your main content blocks cleanly over the background */
+main, section {
   position: relative;
   z-index: 2;
-  background: rgba(11, 19, 43, 0.75) !important; /* Frosted dark glass container */
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(214, 175, 55, 0.2) !important;
-  border-radius: 12px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 2.5rem !important;
+  background: transparent !important; /* No heavy glass blobs, let the template style itself */
 }
