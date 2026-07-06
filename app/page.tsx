@@ -37,12 +37,12 @@ export default function Page() {
         color2: 0xc8af7e,
         birdSize: 0.36,
         wingSpan: 16.00,
-        /* Festivity & Initial Load Adjustments */
-        quantity: 7.00,            // Increased from 4 to 7 for a noticeably richer flock instantly
-        separation: 50.00,         // Pushed apart slightly so the higher count doesn't look cluttered
-        cohesion: 25.00,           // Encourages them to fly across the screen in more visible groups
-        alignment: 18.00,          
-        speedLimit: 1.10           // Keeping the graceful desktop and mobile speed cap
+        /* Precision Throttling for Mobile Engines */
+        quantity: 5.00,            // Throttled down from 7 to stop mobile browser overdrive
+        speedLimit: 0.65,          // Heavily capped speed to force an ultra-slow drift on mobile
+        separation: 50.00,         // Keeps the flock cleanly separated
+        cohesion: 15.00,           // Reduced to stop sudden group dashing behavior
+        alignment: 10.00           // Allows them to glide independently and smoothly
       });
     }
   };
