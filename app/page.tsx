@@ -32,8 +32,11 @@ export default function Page() {
         
         {/* Cinematic Slider Mechanism */}
         <div 
-          className="w-full max-w-2xl flex transition-transform duration-700 cubic-bezier(0.4, 0, 0.2, 1)"
-          style={{ transform: `translateX(-${currentStep * 100}%)` }}
+          className="w-full max-w-2xl flex transition-transform duration-700"
+          style={{ 
+            transform: `translateX(-${currentStep * 100}%)`,
+            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+          }}
         >
           {steps.map((step, idx) => (
             <div 
@@ -46,7 +49,7 @@ export default function Page() {
 
               {/* Dynamic Quick-Navigation Menu: ONLY shows up on the first page layout */}
               {idx === 0 && (
-                <div className="mt-12 p-6 border-t border-[#ad8b3a]/20 max-w-md mx-auto text-center animate-fade-up">
+                <div className="mt-12 p-6 border-t border-[#ad8b3a]/20 max-w-md mx-auto text-center">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-[#ad8b3a]/50 mb-4 font-sans font-medium">
                     Explore Invitation
                   </p>
@@ -54,6 +57,7 @@ export default function Page() {
                     {steps.slice(1).map((menuItem, menuIdx) => (
                       <button
                         key={menuItem.id}
+                        type="button"
                         onClick={() => goToStep(menuIdx + 1)}
                         className="text-xs tracking-widest font-sans uppercase text-[#ad8b3a] hover:text-[#ad8b3a]/60 active:scale-95 transition-all cursor-pointer underline underline-offset-4 decoration-[#ad8b3a]/20 hover:decoration-[#ad8b3a]"
                       >
@@ -73,7 +77,43 @@ export default function Page() {
         
         {/* Custom Arrow Back Control */}
         <button
+          type="button"
           onClick={() => goToStep(currentStep - 1)}
           disabled={currentStep === 0}
           className={`flex items-center gap-2 text-xs uppercase tracking-widest font-sans transition-all py-2 px-3 ${
-            currentStep === 0
+            currentStep === 0 
+              ? 'opacity-0 pointer-events-none' 
+              : 'text-[#ad8b3a] hover:opacity-70 cursor-pointer font-medium'
+          }`}
+        >
+          ← Back
+        </button>
+
+        {/* Global Return-to-Home Hub Anchor */}
+        {currentStep > 0 && (
+          <button 
+            type="button"
+            onClick={() => goToStep(0)}
+            className="text-[10px] uppercase tracking-[0.3em] font-sans text-[#ad8b3a]/50 hover:text-[#ad8b3a] transition-colors cursor-pointer"
+          >
+            • Main Menu •
+          </button>
+        )}
+
+        {/* Custom Arrow Next Control */}
+        <button
+          type="button"
+          onClick={() => goToStep(currentStep + 1)}
+          disabled={currentStep === steps.length - 1}
+          className={`flex items-center gap-2 text-xs uppercase tracking-widest font-medium font-sans py-2.5 px-5 rounded-full border border-[#ad8b3a]/30 transition-all ${
+            currentStep === steps.length - 1
+              ? 'opacity-0 pointer-events-none'
+              : 'bg-[#ad8b3a]/5 text-[#ad8b3a] hover:bg-[#ad8b3a]/10 active:scale-95 cursor-pointer'
+          }`}
+        >
+          {currentStep === steps.length - 2 ? 'View Details →' : 'Next →'}
+        </button>
+      </div>
+    </div>
+  );
+}
