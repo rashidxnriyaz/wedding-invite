@@ -39,7 +39,7 @@ export default function Page() {
         wingSpan: 16.00,
         /* Precision Throttling for Mobile Engines */
         quantity: 5.00,            // Throttled down from 7 to stop mobile browser overdrive
-        speedLimit: 0.5,          // Heavily capped speed to force an ultra-slow drift on mobile
+        speedLimit: 0.25,          // Heavily capped speed to force an ultra-slow drift on mobile
         separation: 50.00,         // Keeps the flock cleanly separated
         cohesion: 15.00,           // Reduced to stop sudden group dashing behavior
         alignment: 10.00           // Allows them to glide independently and smoothly
