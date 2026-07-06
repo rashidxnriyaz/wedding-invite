@@ -29,7 +29,7 @@ export default function Page() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        /* Color Alignment */
+        /* Color Coordinates */
         forceAnimate: true,
         colorMode: "lerpGradient",
         backgroundColor: 0xf5f2eb,
@@ -37,12 +37,13 @@ export default function Page() {
         color2: 0xc8af7e,
         birdSize: 0.36,
         wingSpan: 16.00,
-        /* Precision Throttling for Mobile Engines */
-        quantity: 5.00,            // Throttled down from 7 to stop mobile browser overdrive
-        speedLimit: 0.25,          // Heavily capped speed to force an ultra-slow drift on mobile
-        separation: 50.00,         // Keeps the flock cleanly separated
-        cohesion: 15.00,           // Reduced to stop sudden group dashing behavior
-        alignment: 10.00           // Allows them to glide independently and smoothly
+        quantity: 5.00,            
+        /* Fixed Refresh-Rate Engine Override */
+        frameLimit: 60,            // Locks high-refresh 120Hz screens down to a standard speed pace
+        speedLimit: 1.00,          // Reset to 1.00 so the calculation stays stable under the lock
+        separation: 50.00,         
+        cohesion: 15.00,           
+        alignment: 10.00           
       });
     }
   };
