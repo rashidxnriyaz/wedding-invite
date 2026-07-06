@@ -36,7 +36,7 @@ export default function Page() {
         birdSize: 0.60,            // Small, delicate birds
         quantity: 4.00,            
         wingSpan: 18.00,           
-        speedLimit: 1.75,          // Cut by half for an ultra-slow, peaceful flight
+        speedLimit: 0.75,          // Cut by half for an ultra-slow, peaceful flight
         separation: 30.00,         // Slightly more space between them
         alignment: 20.00,
         cohesion: 20.00
