@@ -29,15 +29,17 @@ export default function Page() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        /* Ultra-subtle micro adjustments */
-        backgroundColor: 0xf5f2eb, // Your main cozy ivory
-        color1: 0xdedacf,          // Soft shade darker than background (no more white)
-        color2: 0xe3dfd5,          // Complementary deep-ivory accent
-        birdSize: 0.36,            // 5x smaller for tiny, elegant silhouettes
+        /* Layout & Color Fixes */
+        forceAnimate: true,        // Force initial render immediately on load
+        colorMode: "lerpGradient", // Fixes the white color bug by stripping out random white highlights
+        backgroundColor: 0xf5f2eb, // Elegant ivory template backdrop
+        color1: 0xdec08a,          // Warm, muted darker gold/ivory shadow tint
+        color2: 0xc8af7e,          // Deep accent shade so birds are perfectly visible
+        birdSize: 0.36,            // Your customized sweet-spot size
         quantity: 4.00,            
-        wingSpan: 12.00,           // Proportional wing adjustment for tiny birds
-        speedLimit: 1.75,          // Maintaining the ultra-slow speed
-        separation: 40.00,         // Spaced wider apart so it feels minimal
+        wingSpan: 16.00,           
+        speedLimit: 1.75,          // Slower glide speed
+        separation: 40.00,         
         alignment: 20.00,
         cohesion: 20.00
       });
@@ -47,7 +49,7 @@ export default function Page() {
   useEffect(() => {
     initVanta();
     return () => {
-      if (vantaEffect.current) vantaEffect.current.destroy();
+      if (vantaEffect.current) vantaEffect.current.destroy(); // Proper page hook cleanup
     };
   }, []);
 
@@ -64,14 +66,17 @@ export default function Page() {
         onLoad={initVanta}
       />
 
-      <div ref={vantaRef} className="min-h-screen relative w-full">
-        <main className="relative z-10 bg-transparent">
-          <WeddingHero />
-          <QuranicVerse />
-          <EventDetails />
-          <CountdownSection />
-          <ClosingSection />
-        </main>
+      {/* Fixed positioning ensures the viewport initializes instantly without layout shifting */}
+      <div ref={vantaRef} className="fixed inset-0 w-full h-full min-h-screen">
+        <div className="absolute inset-0 overflow-y-auto w-full h-full z-10">
+          <main className="relative bg-transparent min-h-screen">
+            <WeddingHero />
+            <QuranicVerse />
+            <EventDetails />
+            <CountdownSection />
+            <ClosingSection />
+          </main>
+        </div>
       </div>
     </>
   );
