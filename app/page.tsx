@@ -29,19 +29,20 @@ export default function Page() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        /* Layout & Color Fixes */
-        forceAnimate: true,        // Force initial render immediately on load
-        colorMode: "lerpGradient", // Fixes the white color bug by stripping out random white highlights
-        backgroundColor: 0xf5f2eb, // Elegant ivory template backdrop
-        color1: 0xdec08a,          // Warm, muted darker gold/ivory shadow tint
-        color2: 0xc8af7e,          // Deep accent shade so birds are perfectly visible
-        birdSize: 0.36,            // Your customized sweet-spot size
-        quantity: 4.00,            
-        wingSpan: 16.00,           
-        speedLimit: 1.75,          // Slower glide speed
-        separation: 40.00,         
-        alignment: 20.00,
-        cohesion: 20.00
+        /* Color Alignment */
+        forceAnimate: true,
+        colorMode: "lerpGradient",
+        backgroundColor: 0xf5f2eb,
+        color1: 0xdec08a,
+        color2: 0xc8af7e,
+        birdSize: 0.36,
+        wingSpan: 16.00,
+        /* Festivity & Initial Load Adjustments */
+        quantity: 7.00,            // Increased from 4 to 7 for a noticeably richer flock instantly
+        separation: 50.00,         // Pushed apart slightly so the higher count doesn't look cluttered
+        cohesion: 25.00,           // Encourages them to fly across the screen in more visible groups
+        alignment: 18.00,          
+        speedLimit: 1.10           // Keeping the graceful desktop and mobile speed cap
       });
     }
   };
@@ -49,7 +50,7 @@ export default function Page() {
   useEffect(() => {
     initVanta();
     return () => {
-      if (vantaEffect.current) vantaEffect.current.destroy(); // Proper page hook cleanup
+      if (vantaEffect.current) vantaEffect.current.destroy();
     };
   }, []);
 
@@ -66,7 +67,6 @@ export default function Page() {
         onLoad={initVanta}
       />
 
-      {/* Fixed positioning ensures the viewport initializes instantly without layout shifting */}
       <div ref={vantaRef} className="fixed inset-0 w-full h-full min-h-screen">
         <div className="absolute inset-0 overflow-y-auto w-full h-full z-10">
           <main className="relative bg-transparent min-h-screen">
