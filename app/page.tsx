@@ -29,15 +29,15 @@ export default function Page() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        /* Custom Website Color Tuning */
-        backgroundColor: 0xf5f2eb, // Exact cozy ivory template backdrop
-        color1: 0x8a6d26,          // Deep, rich gold birds for sharp contrast
-        color2: 0xb89842,          // Soft accent gold birds
-        birdSize: 1.20,
-        quantity: 4.00,
-        wingSpan: 24.00,
-        speedLimit: 3.50,
-        separation: 25.00,
+        /* Subtle, Softened Color & Motion Settings */
+        backgroundColor: 0xf5f2eb, // Cozy ivory backdrop
+        color1: 0xd0bf9d,          // Very soft, muted champagne gold
+        color2: 0xe2d9c5,          // Delicate accent gold that melts into the ivory
+        birdSize: 0.60,            // Small, delicate birds
+        quantity: 4.00,            
+        wingSpan: 18.00,           
+        speedLimit: 1.75,          // Cut by half for an ultra-slow, peaceful flight
+        separation: 30.00,         // Slightly more space between them
         alignment: 20.00,
         cohesion: 20.00
       });
@@ -53,7 +53,6 @@ export default function Page() {
 
   return (
     <>
-      {/* Dynamic script injections for Vanta.js animation */}
       <Script 
         src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" 
         strategy="afterInteractive"
@@ -65,7 +64,6 @@ export default function Page() {
         onLoad={initVanta}
       />
 
-      {/* The main page target wrapper container */}
       <div ref={vantaRef} className="min-h-screen relative w-full">
         <main className="relative z-10 bg-transparent">
           <WeddingHero />
