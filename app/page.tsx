@@ -5,7 +5,7 @@ import { CountdownSection } from '@/components/countdown-section'
 import { ClosingSection } from '@/components/closing-section'
 
 export default function Page() {
-return (
+  return (
     <main className="w-full min-h-screen">
       <WeddingHero />
       <QuranicVerse />
@@ -13,7 +13,5 @@ return (
       <CountdownSection />
       <ClosingSection />
     </main>
-  )
-  )
   )
 }
